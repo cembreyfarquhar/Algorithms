@@ -3,8 +3,18 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
-
+  rec_vals = list(recipe.values())
+  ing_vals = list(ingredients.values())
+  rec_keys = recipe.keys()
+  ing_keys = ingredients.keys()
+  result = ing_vals[0] / rec_vals[0]
+  if rec_keys != ing_keys:
+  	return 0
+  for i in range(0, len(rec_keys) - 1):
+  	x = ing_vals[i] / rec_vals[i]
+  	if x < result:
+  		result = x
+  return int(result)
 
 if __name__ == '__main__':
   # Change the entries of these dictionaries to test 
